@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: finalexam-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: finalexam
+  template:
+    metadata:
+      labels:
+        app: finalexam
+    spec:
+      containers:
+      - name: finalexam
+        image: salari111/q9finalexam:latest
+        ports:
+        - containerPort: 8080
